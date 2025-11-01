@@ -1,0 +1,186 @@
+/* =========================================
+   1. RESET E ESTILOS GLOBAIS
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #F8F9FA;
+    color: #2B2B2B;
+}
+
+/* =========================================
+   2. TIPOGRAFIA GLOBAL
+   ========================================= */
+
+/* Estilo global para parágrafos (será sobrescrito no 'main') */
+p {
+    line-height: 1.6; /* Torna a leitura mais fácil */
+    font-size: 16px;
+}
+
+/* Para subtítulos como "Do Zero ao Jogo" */
+h3 { 
+    font-size: 22px;
+    margin-top: 24px;
+    margin-bottom: 10px;
+}
+
+/* =========================================
+   3. LAYOUT E COMPONENTES
+   ========================================= */
+
+/* --- Cabeçalho (Header) --- */
+.site-header {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 15px 20px; /* Espaçamento interno */
+    border-bottom: 1px solid #555;
+    
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight; /* Cuidado: 'weight' não é um valor. Use um número (ex: 400) ou 'normal'/'bold' */
+    font-style: normal;
+}
+
+.site-header h1 {
+    margin: 0;
+}
+
+.site-header h1 a {
+    color: #4A00E0; 
+    text-decoration: none;
+    font-size: 24px;
+}
+
+/* --- Menu Principal (Desktop) --- */
+/* (Adicionei o '.' que faltava em '.menu-principal') */
+.menu-principal ul {
+    display: flex; 
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+}
+
+.menu-principal li {
+    margin-left: 18px; /* Espaçamento entre os itens */
+}
+
+.menu-principal a {
+    color: #2B2B2B;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Efeito 'hover' (passar o mouse por cima) */
+.menu-principal a:hover {
+    color: #F25F4C;
+}
+
+/* --- Botão Menu Hambúrguer (Mobile) --- */
+.menu-toggle {
+    display: none; /* ESCONDIDO por padrão (no desktop) */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.menu-toggle .barra {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #F25F4C; /* Cor das barrinhas */
+    margin: 5px 0;
+    transition: 0.3s; /* Animação suave */
+}
+
+/* --- Conteúdo Principal (Main) --- */
+/* (Combinei as duas regras 'main' que estavam separadas) */
+main {
+    
+    width: 90%;
+    max-width: 800px; 
+    margin: 40px auto; 
+    padding-left: 16px;  /* Espaço interno da esquerda */
+    padding-right: 16px; /* Espaço interno da direita */
+    padding-bottom: 40px; /* Um espaço extra antes do rodapé */
+
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+main h2 {
+    font-size: 32px; /* Deixa o título "Sobre nós" maior */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+    color: #4A00E0;
+}
+
+main p {
+    font-size: 18px; /* Tamanho bom para leitura (sobrescreve o global) */
+    line-height: 1.6; /* ESPAÇAMENTO ENTRE AS LINHAS */
+    margin-bottom: 20px; /* Espaço entre os parágrafos */
+}
+
+/* --- Rodapé (Footer) --- */
+/* (Movi esta regra de lá do final) */
+footer {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 40px;
+}
+
+/* =========================================
+   4. ESTILOS RESPONSIVOS (MOBILE)
+   ========================================= */
+
+/* Aplicado em telas com 768px de largura ou MENOS */
+@media (max-width: 768px) {
+
+    /* 1. Esconde o menu de desktop */
+    .menu-principal {
+        display: none; 
+        
+        /* Quando ele for aberto, ficará assim: */
+        position: absolute; 
+        top: 70px; /* Abaixo do cabeçalho (ajuste se precisar) */
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        border-top: 1px solid #555;
+    }
+
+    /* 2. Mostra o botão hambúrguer */
+    .menu-toggle {
+        display: block; /* MOSTRA o botão */
+    }
+
+    /* 3. Ajusta o layout do menu quando aberto */
+    .menu-principal ul {
+        flex-direction: column; /* Empilha os links verticalmente */
+        width: 100%;
+    }
+
+    .menu-principal li {
+        margin: 0;
+        text-align: center; 
+        border-bottom: 1px solid #555;
+    }
+    
+    .menu-principal a {
+        display: block; /* Faz o link ocupar a linha inteira */
+        padding: 15px 0; /* Mais área de clique */
+    }
+
+    /* 4. Classe que o JavaScript vai adicionar/remover */
+    .menu-principal.aberto {
+        display: block; /* Mostra o menu! */
+    }
+}
