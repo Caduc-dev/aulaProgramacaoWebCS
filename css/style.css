@@ -1,0 +1,352 @@
+
+/* Aqui a gente reseta tudo para começar do zero, evitando surpresas com estilos padrão do navegador. É como limpar a mesa antes de cozinhar! */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CORPO DA PÁGINA - O fundo e a base de tudo */
+
+/* O body é o "corpo" do site. */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f8;
+    color: #2B2B2B;
+}
+
+/* =========================================
+   TIPOGRAFIA GLOBAL - Como o texto vai se comportar
+   ========================================= */
+
+p {
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Subtítulos como "Do Zero ao Jogo" */
+h3 {
+    font-size: 22px;
+    margin-top: 24px;
+    margin-bottom: 10px;
+}
+
+/* =========================================
+   LAYOUT E COMPONENTES - As partes visuais do site
+   ========================================= */
+
+/* --- CABEÇALHO (HEADER) --- */
+/* O cabeçalho fica no topo, com logo e menu lado a lado. Adicionei uma borda sutil embaixo para separar do resto. */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    border-bottom: 1px solid #b1b1b1;
+    font-family:'Poppins', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Peso normal para não ficar muito pesado */
+    font-style: normal;
+}
+
+.site-logo {
+  height: 200px; /* <-- Ajuste essa altura como preferir (50px é um bom começo) */
+  width: auto;  /* Deixa a largura se ajustar automaticamente */
+  display: block; /* Remove espaços extras que algumas imagens têm */
+}
+
+/* O título do site (h1)*/
+
+.site-header h1 {
+    margin: 0;
+
+}
+
+/* O link do título fica roxo e sem sublinhado, para parecer um botão legal. */
+.site-header h1 a {
+    color: #4A00E0;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+/* --- MENU PRINCIPAL (DESKTOP) --- */
+/* O menu é uma lista horizontal no topo. Sem bolinhas (list-style: none) e com links lado a lado. */
+.menu-principal ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.imagem-destaque {
+  max-width: 65%; /* Garante que a imagem nunca ultrapasse a largura do seu contêiner */
+  height: auto;    /* Mantém a proporção da imagem */
+  display: block;  /* Remove espaços indesejados abaixo da imagem */
+  margin-bottom: 30px; /* Adiciona um espaço abaixo da imagem, separando-a do texto */
+  border-radius: 8px; /* Cantos levemente arredondados, para um visual mais suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil para dar profundidade */
+}
+
+/* Cada item do menu tem um espaço lateral para não grudar um no outro. */
+.menu-principal li {
+    margin-left: 18px;
+}
+
+/* Links do menu ficam na cor do texto principal e sem sublinhado. */
+.menu-principal a {
+    color: #F25F4C;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Quando você passa o mouse, o link fica laranja para dar feedback visual. É como piscar um olho! */
+.menu-principal a:hover {
+    color: #F25F4C;
+}
+
+.card-sobre-nos {
+  background-color: #FFF; /* Garante que o fundo do card seja branco */
+  border-radius: 12px;  /* Cantos arredondados para o card */
+  
+  /* A sombra que faz o "card" flutuar */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); 
+  
+  /* Espaçamento INTERNO para o conteúdo não grudar nas bordas */
+  padding: 30px;
+}
+
+/* --- Ajuste da Imagem Dentro do Card --- */
+
+.imagem-destaque {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  
+  /* Cantos arredondados para a própria imagem */
+  border-radius: 8px; 
+  
+  /* Espaço entre a imagem e o primeiro parágrafo */
+  margin-bottom: 20px;
+  
+  /* REMOVE a sombra da imagem (o card agora tem a sombra) */
+  box-shadow: none; 
+}
+
+/* --- BOTÃO MENU HAMBÚRGUER (MOBILE) --- */
+/* Esse botão só aparece no celular. Por padrão, fica escondido no desktop. */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* As barrinhas do hambúrguer são vermelhas e têm uma animação suave quando clicadas. */
+.menu-toggle .barra {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #F25F4C;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* --- CONTEÚDO PRINCIPAL (MAIN) --- */
+/* O main é o coração da página: centralizado, com largura limitada para não ficar largo demais. */
+main {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 16px 40px; /* Espaço nas laterais e embaixo */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Títulos grandes como "Sobre nós" ficam roxos e destacados. */
+main h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #4A00E0;
+}
+
+/* Parágrafos aqui são um pouco maiores e com espaço entre linhas para leitura confortável. */
+main p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* --- RODAPÉ (FOOTER) --- */
+/* O rodapé fica embaixo de tudo, centralizado e com uma borda sutil no topo. */
+footer {
+    width: 100%;
+    padding: 30px 0;
+    margin-top: 40px;
+    border-top: 1px solid #555;
+    text-align: center;
+}
+
+/* Texto do rodapé é pequeno e cinza para não chamar muita atenção. */
+footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #AAA;
+}
+
+/* =========================================
+   VERSÃO MOBILE - Ajustes para telas pequenas
+   ========================================= */
+/* Quando a tela é pequena (até 768px), escondemos o menu desktop e mostramos o hambúrguer. É como trocar de roupa para uma festa menor! */
+@media (max-width: 768px) {
+    /* Esconde o menu de desktop e posiciona ele absoluto para aparecer quando aberto. */
+    .menu-principal {
+        display: none;
+        position: absolute;
+        top: 58px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        border-top: 1px solid #555;
+    }
+
+    /* Mostra o botão hambúrguer para abrir o menu. */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Menu fica vertical (empilhado) e ocupa a largura toda. */
+    .menu-principal ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* Itens do menu ficam centralizados com borda embaixo para separar. */
+    .menu-principal li {
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid #555;
+    }
+
+    /* Links ocupam a linha inteira para facilitar o clique no celular. */
+    .menu-principal a {
+        display: block;
+        padding: 15px 0;
+    }
+
+    /* Classe que o JavaScript ativa para mostrar o menu quando clicado. */
+    .menu-principal.aberto {
+        display: block;
+    }
+}
+
+/* pagina de cadastro */
+
+.card-login {
+  max-width: 500px; 
+  margin: 40px auto; /* Centraliza O CARD na tela */
+  padding: 30px;
+  background-color: #FFF;
+  color: #333;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}   
+
+.card-login p {
+  color: #444;
+  font-size: 0.95rem;
+  margin-bottom: 1.0rem;
+}
+
+.card-login label {
+  display: block;
+  text-align: left;
+  font-weight: 600;
+  margin-top: 1rem;
+  color: #333;
+}
+
+.card-login input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.card-login button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #4A00E0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.card-login button:hover {
+  background-color: #3700B3;
+}
+
+.card-projeto1, .card-projeto2, .card-projeto3 {
+  width: 350px; /* Largura fixa ou responsiva */
+  padding: 20px; /* Espaçamento interno */
+  background-color: #fff; /* Fundo branco */
+  margin: 10px; /* Margem externa */
+  font-family: Arial, sans-serif; /* Fonte */
+  border-radius: 12px;  /* Cantos arredondados para o card */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); 
+  /* Espaçamento INTERNO para o conteúdo não grudar nas bordas */
+  padding: 25px;
+
+}
+
+.card-projeto1 h3, .card-projeto2 h3, .card-projeto3 h3 {
+  color: #4A00E0; /* Cor do título */
+}
+
+.card-projeto1 p, .card-projeto2 p, .card-projeto3 p {
+  color: #333; /* Cor do texto */
+  line-height: 1.5; /* Espaçamento entre linhas */
+}
+
+.card-projeto1 a, .card-projeto2 a, .card-projeto3 a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #F25F4C; /* Cor do link */
+  text-decoration: none; /* Remove sublinhado */
+}
+
+.card-projeto1 a:hover, .card-projeto2 a:hover, .card-projeto3 a:hover {
+  text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
+
+/* Imagens dentro dos cards de projeto */
+.card-projeto1 img, .card-projeto2 img, .card-projeto3 img {
+  width: 100%; /* Ocupa toda a largura do card */
+  height: auto; /* Mantém a proporção */
+  border-radius: 8px; /* Cantos arredondados para a imagem */
+  margin-bottom: 15px; /* Espaço abaixo da imagem */
+}
+
+/* Layout flexível para os cards de projeto */
+main {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os cards quebrem linha se necessário */
+  justify-content: center; /* Centraliza os cards */ 
+    gap: 20px; /* Espaçamento entre os cards */
+
+}
+
+/* Imagem da página de cadastro */
+.img-jang {
+  max-width: 100%; /* Garante que a imagem nunca ultrapasse a largura do seu contêiner */
+  height: auto;    /* Mantém a proporção da imagem */
+  display: block;  /* Remove espaços indesejados abaixo da imagem */
+  margin: 20px auto; /* Adiciona um espaço acima e abaixo da imagem, centralizando-a */
+}
